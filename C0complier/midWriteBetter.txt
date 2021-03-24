@@ -1,0 +1,63 @@
+func	int	  	operation
+para	int	  	x
+para	int	  	y
+para	int	  	kind
+==	kind	1	  
+jne	  	  	_LABEL_1
++	x	y	$_0
+prt	"operation:"	$_0	int
++	x	y	$_1
+ret	  	  	$_1
+jmp	  	  	_LABEL_0
+lab:	  	  	_LABEL_1
+==	kind	2	  
+jne	  	  	_LABEL_2
+-	x	y	$_2
+prt	"operation:"	$_2	int
+-	x	y	$_3
+ret	  	  	$_3
+jmp	  	  	_LABEL_0
+lab:	  	  	_LABEL_2
+==	kind	3	  
+jne	  	  	_LABEL_3
+*	x	y	$_4
+prt	"operation:"	$_4	int
+*	x	y	$_5
+ret	  	  	$_5
+jmp	  	  	_LABEL_0
+lab:	  	  	_LABEL_3
+==	kind	4	  
+jne	  	  	_LABEL_4
+!=	y	0	  
+jne	  	  	_LABEL_5
+/	x	y	$_6
+prt	"operation:"	$_6	int
+/	x	y	$_7
+ret	  	  	$_7
+jmp	  	  	_LABEL_6
+lab:	  	  	_LABEL_5
+prt	"cannot div 0!!!"		int
+ret	  	  	0
+lab:	  	  	_LABEL_6
+jmp	  	  	_LABEL_0
+lab:	  	  	_LABEL_4
+prt	"operation kind is not in [+-*/]!!!"		int
+-	0 	1	$_8
+ret	  	  	$_8
+lab:	  	  	_LABEL_0
+end	  	  	operation
+func	  	  	main
+int	  	  	x
+int	  	  	y
+int	  	  	kind
+int	  	  	ans
+scf	  	  	x
+scf	  	  	y
+scf	  	  	kind
+fupa	  	  	x
+fupa	  	  	y
+fupa	  	  	kind
+call	operation	  	$_0
+=	$_0	  	ans
+ret	  	  	  
+end	  	  	main
